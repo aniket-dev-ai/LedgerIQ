@@ -9,7 +9,7 @@ import {
   Building,
   ArrowUpRight,
 } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/home/card";
+import { Card} from "@/components/ui/home/card";
 import { Badge } from "@/components/ui/home/badge";
 import { Button } from "@/components/ui/home/button";
 

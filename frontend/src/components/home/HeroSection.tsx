@@ -22,7 +22,7 @@ export const HeroSection: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs font-medium text-foreground transition-all duration-200 hover:border-primary/50 hover:bg-secondary">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span>LedgerIQ v2.0 is Live</span>
+            <span>LedgerIQ is Live</span>
             <span className="text-muted-foreground">|</span>
             <span className="text-muted-foreground">
               Autonomous Financial Audit
