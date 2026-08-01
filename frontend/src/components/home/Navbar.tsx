@@ -43,19 +43,16 @@ export const Navbar: React.FC = () => {
   };
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string,
+    route: string,
   ) => {
+    e.preventDefault();
+
     if (!user) {
-      e.preventDefault();
       setOpen(true);
       return;
     }
 
-    document.getElementById(sectionId)?.scrollIntoView({
-      behavior: "smooth",
-    });
-
-    e.preventDefault();
+    router.push(route);
   };
   const user = useUser();
   const [open, setOpen] = useState(false);
@@ -76,14 +73,14 @@ export const Navbar: React.FC = () => {
         <nav className="hidden md:flex items-center gap-12 text-sm font-medium">
           <a
             href="#how-it-works"
-            onClick={(e) => handleNavClick(e, "how-it-works")}
+            onClick={(e) => handleNavClick(e, "/upload")}
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             Upload
           </a>
           <a
             href="#features"
-            onClick={(e) => handleNavClick(e, "features")}
+            onClick={(e) => handleNavClick(e, "/invoice")}
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             Invoice
@@ -91,7 +88,7 @@ export const Navbar: React.FC = () => {
 
           <a
             href="#dashboard-preview"
-            onClick={(e) => handleNavClick(e, "dashboard-preview")}
+            onClick={(e) => handleNavClick(e, "/review")}
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             Review
@@ -99,7 +96,7 @@ export const Navbar: React.FC = () => {
 
           <a
             href="#why-ledgeriq"
-            onClick={(e) => handleNavClick(e, "why-ledgeriq")}
+            onClick={(e) => handleNavClick(e, "/dashboard")}
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             Dashboard
