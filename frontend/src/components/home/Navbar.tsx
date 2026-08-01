@@ -4,6 +4,7 @@ import React from "react";
 import { ShieldCheck, ArrowRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/home/button";
 import { useRouter } from "next/navigation";
+import { ModeToggle } from "../theme-change-icon";
 
 export const Navbar: React.FC = () => {
   const router = useRouter();
@@ -14,8 +15,8 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md transition-all duration-200">
-      <div className="mx-auto flex h-12 max-w-7xl items-center justify-between  sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md transition-all duration-200">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between  sm:px-6 lg:px-8">
         {/* Brand Logo */}
         <div className="flex items-center gap-3 group cursor-pointer">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm transition-transform duration-200 ease-out group-hover:scale-105">
@@ -27,35 +28,36 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-12 text-sm font-medium">
           <a
             href="#how-it-works"
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
-            How it Works
+            Upload
           </a>
           <a
             href="#features"
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
-            Features
+            invoice
           </a>
           <a
             href="#dashboard-preview"
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
-            Product
+            Review
           </a>
           <a
             href="#why-ledgeriq"
             className="text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
-            Impact
+            Dashboard
           </a>
         </nav>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
+          <ModeToggle />
           <Button
             variant="ghost"
             className="hidden sm:inline-flex"
