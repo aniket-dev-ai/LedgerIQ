@@ -1,15 +1,8 @@
-import { GoogleButton } from "./google-button";
-import { GithubButton } from "./github-button";
 import { signup } from "@/lib/supabase/auth";
 
 export function SignupForm() {
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-2 gap-3">
-        <GithubButton />
-        <GoogleButton />
-      </div>
-
       <div className="relative flex py-2 items-center">
         <div className="flex-grow border-t border-border"></div>
         <span className="flex-shrink mx-4 text-xs uppercase tracking-widest text-muted-foreground font-semibold">
