@@ -1,4 +1,3 @@
-import { DashboardHeader } from "./dashboard-header";
 import { KPIGrid } from "./kpi-grid";
 import { RiskTrendChart } from "./risk-trend-chart";
 import { InvoiceStatusChart } from "./invoice-status-chart";
