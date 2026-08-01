@@ -29,14 +29,24 @@ export async function updateSession(request: NextRequest) {
       },
     }
   )
+  const {
+    data,
+    error,
+  } = await supabase.auth.getClaims();
+  
+  const claims = data?.claims;
+  
+  const isProtectedRoute =
+    request.nextUrl.pathname.startsWith("/dashboard") ||
+    request.nextUrl.pathname.startsWith("/profile") ||
+    request.nextUrl.pathname.startsWith("/settings");
 
-  // Do not run code between createServerClient and
-  // supabase.auth.getClaims(). A simple mistake could make it very hard to debug
-  // issues with users being randomly logged out.
-
-  // IMPORTANT: If you remove getClaims() and you use server-side rendering
-  // with the Supabase client, your users may be randomly logged out.
-  await supabase.auth.getClaims()
+  if (isProtectedRoute && (error || !claims)) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/login";
+    url.searchParams.set("redirectTo", request.nextUrl.pathname);
+    return NextResponse.redirect(url);
+  }
 
   return supabaseResponse
 }

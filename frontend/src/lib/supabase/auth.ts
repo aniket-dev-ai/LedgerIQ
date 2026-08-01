@@ -80,3 +80,15 @@ export async function loginWithGithub() {
 
   redirect(data.url)
 }
+
+export async function logout() {
+  const supabase = await createClient();
+
+  const { error } = await supabase.auth.signOut()
+
+  if (error) {
+    throw error;
+  }
+
+  return { success: true };
+}
