@@ -6,16 +6,19 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "faker>=40.36.0",
+    "fastapi>=0.141.1",
     "generators>=2020.4.27",
     "matplotlib>=3.11.1",
     "missingno>=0.5.2",
     "nbformat>=5.10.4",
     "pandas>=3.0.5",
     "plotly>=6.9.0",
+    "python-multipart>=0.0.32",
     "scikit-learn>=1.9.0",
     "seaborn>=0.13.2",
     "shap>=0.52.0",
     "torch>=2.13.0",
     "torchvision>=0.28.0",
+    "uvicorn>=0.52.1",
     "xgboost>=3.3.0",
 ]
